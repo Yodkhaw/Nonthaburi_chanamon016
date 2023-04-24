@@ -1,0 +1,264 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nonthaburi travel</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    
+    <!-- W3 CSS template -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <style>
+    #mapid {
+    height: 800px;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+        <table class="w3-table w3-striped">
+        <tr>
+        <th>ชื่อแหล่งท่องเที่ยว</th>
+        <th>ประเภท</th>
+        <th>ระดับ</th>
+        </tr>
+        <tr>
+        <td>น้ำตก A</td>
+        <td>ธรรมชาติ</td>
+        <td>A</td>
+        </tr>
+        </table>
+        </div>
+        </div>
+<script>
+    var map = L.map("mapid").setView([13.897559968079454, 100.44970379799868], 12);
+ 
+ var osm = L.tileLayer(
+ "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+ ).addTo(map);
+ var gsat = L.tileLayer(
+ "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+ ).addTo(map);
+ var OpenStreetMap_HOT = L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png").addTo(map);
+ 
+ var baseMaps = {
+ OSM: osm,
+GoogleSat: gsat,
+StreetMap_HOT: OpenStreetMap_HOT,
+ };
+ 
+ var nonthaburi = {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "เกาะเกร็ด",
+          "type": "ตลาด",
+          "level": 7
+        },
+        "geometry": {
+          "coordinates": [
+            100.4770178617569,
+            13.90977553317991
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "เซ็ลทรัล เวสเกต",
+          "type": "ห้างสรรพสินค้า",
+          "level": 8
+        },
+        "geometry": {
+          "coordinates": [
+            100.41164829661346,
+            13.876965052541962
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "อิเกีย บางใหญ่",
+          "type": "ห้างสรรพสินค้า",
+          "level": 8
+        },
+        "geometry": {
+          "coordinates": [
+            100.41251847378294,
+            13.878750287397807
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "บีบี มาร์เก็ต",
+          "type": "ตลาด",
+          "level": 6
+        },
+        "geometry": {
+          "coordinates": [
+            100.40846786894417,
+            13.877003461251832
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "วัดไทรใหญ่",
+          "type": "วัด",
+          "level": 5
+        },
+        "geometry": {
+          "coordinates": [
+            100.31081045246623,
+            13.978568479088466
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "วัดเล่งเน่ยยี่2",
+          "type": "วัด",
+          "level": 4
+        },
+        "geometry": {
+          "coordinates": [
+            100.42142180945797,
+            13.913089819065306
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "วัดสนามเหนือ",
+          "type": "วัด",
+          "level": 3
+        },
+        "geometry": {
+          "coordinates": [
+            100.49246954397734,
+            13.912855615346842
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "ตลาดเลี่ยงเมืองนนท์",
+          "type": "ตลาด",
+          "level": 5
+        },
+        "geometry": {
+          "coordinates": [
+            100.49501191534665,
+            13.868949588570587
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "ท่าน้ำนนท์",
+          "type": "ท่าน้ำ",
+          "level": 4
+        },
+        "geometry": {
+          "coordinates": [
+            100.49188454232655,
+            13.842380585726417
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "สวนเฉลิมพระเกียรติ",
+          "type": "สวน",
+          "level": 4
+        },
+        "geometry": {
+          "coordinates": [
+            100.5307559222291,
+            13.880958813078067
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }
+
+  // interaction by mouseover
+  var tourLayer = L.geoJSON(nonthaburi, {
+ pointToLayer: function (feature, latlng) {
+ return L.marker(latlng).bindPopup(feature.properties.name);
+ },
+ onEachFeature: function (feature, layer) {
+ layer.on("mouseover", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.add("w3-red");
+ });
+ 
+ layer.on("mouseout", function () {
+ document
+ .getElementById(feature.properties.name)
+ .classList.remove("w3-red");
+ });
+ },
+ }).addTo(map);
+ 
+ var cont = "";
+ cont += "<table class='w3-table w3-striped'>";
+ cont += "<tr>";
+ cont += "<th>ชื่อแหล่งท่องเที่ยว</th>";
+ cont += "<th>ประเภท</th>";
+ cont += "<th>ระดับ</th>";
+ cont += "</tr>";
+ for (let i in nonthaburi.features) {
+ cont += "<tr id=" + nonthaburi.features[i].properties.name + ">";
+ cont += "<td>" + nonthaburi.features[i].properties.name + "</td>";
+ cont += "<td>" + nonthaburi.features[i].properties.type + "</td>";
+ cont += "<td>" + nonthaburi.features[i].properties.level + "</td>";
+ cont += "</tr>";
+ }
+ cont += "</table>";
+ console.log(cont);
+ document.getElementById("content").innerHTML = cont;
+
+ var overlays = {Travel_nonthaburi: tourLayer};
+ //add leyer control
+ L.control.layers(baseMaps, overlays).addTo(map);
+</script>
+
+
+
+
+
+
+</body>
+</html>
